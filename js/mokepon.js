@@ -9,14 +9,13 @@ function seleccionarMascotaJugador(){
     let capipepo = document.getElementById("capipepo").checked
     let ratigueya = document.getElementById("ratigueya").checked
 
-    let ratigueyo = document.getElementById("ratigueya").checked
     
     if(hypodoge == true){
-        alert("Has seleccionado a Hypodoge!")
+        alert("¡Has seleccionado a Hypodoge!")
     }else if(capipepo == true){
-        alert("Has seleccionado a Capipepo!")
+        alert("¡Has seleccionado a Capipepo!")
     }else if(ratigueya == true){
-        alert("Has seleccionado a la Ratigueya!")
+        alert("¡Has seleccionado a la Ratigueya!")
     }
 }
 
