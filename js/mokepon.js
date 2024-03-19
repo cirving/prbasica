@@ -137,20 +137,18 @@ function evaluarBatalla(){
             SpanVidasJugador.innerHTML = vidasJugador
          
     }
-    
+
     crearMensaje()
 
     revisarVidas()
 
-
 }
 function revisarVidas(){
         if(vidasJugador == 0 ){
-            alert("YA PERDISTE.")
+            crearMensajeFinal("Perdiste.")
  
         }else if(vidasEnemigo == 0){
-            alert("YA GANASTE.")
-
+            crearMensajeFinal("¡¡¡Felicitaciones, has ganado!!!")
         }
     }
 
@@ -159,6 +157,15 @@ function crearMensaje(){
     let parrafoMensajes = document.getElementById("mensajes");
     let parrafo = document.createElement("p");
     parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", tu enemigo atacó con " + ataqueMaquina + ", " + mensajeFinal;
+    parrafoMensajes.appendChild(parrafo)
+
+}
+
+function crearMensajeFinal(mensajeFinalBatalla){
+
+    let parrafoMensajes = document.getElementById("mensajes");
+    let parrafo = document.createElement("p");
+    parrafo.innerHTML = mensajeFinalBatalla;
     parrafoMensajes.appendChild(parrafo)
 
 }
