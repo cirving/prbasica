@@ -1,5 +1,8 @@
 let ataqueJugador 
 let ataqueMaquina
+let mensajeFinal
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function iniciarJuego(){
 
@@ -19,17 +22,15 @@ function iniciarJuego(){
 
 function seleccionarAtaqueFuego(){
     ataqueJugador = "Fuego"
-    
     seleccionarAtaqueMaquina()
+
 }
 function seleccionarAtaqueAgua(){
     ataqueJugador = "Agua"
-    
     seleccionarAtaqueMaquina()
 }
 function seleccionarAtaqueTierra(){
     ataqueJugador = "Tierra"
-    
     seleccionarAtaqueMaquina()
 }
 
@@ -98,9 +99,55 @@ function seleccionarAtaqueMaquina(){
         ataqueMaquina = "Tierra"
     }
 
+    evaluarBatalla()
+
     return ataqueMaquina
 }
 
+function evaluarBatalla(){
+
+    let SpanVidasJugador
+    let SpanVidasEnemigo
+
+    if(ataqueJugador == ataqueMaquina){
+            mensajeFinal = "EMPATARON"
+
+    }else if(ataqueJugador == "Fuego" && ataqueMaquina ==  "Tierra"){
+            mensajeFinal = "GANASTE"
+            vidasEnemigo--
+            SpanVidasEnemigo  = document.getElementById("vidas-enemigo")
+            SpanVidasEnemigo.innerHTML = vidasEnemigo
+
+    }else if(ataqueJugador == "Agua" && ataqueMaquina == "Fuego"){
+            mensajeFinal = "GANASTE"
+            vidasEnemigo--
+            SpanVidasEnemigo  = document.getElementById("vidas-enemigo")
+            SpanVidasEnemigo.innerHTML = vidasEnemigo
+
+    }else if(ataqueJugador == "Tierra" && ataqueMaquina == "Agua"){
+            mensajeFinal = "GANASTE"
+            vidasEnemigo--
+            SpanVidasEnemigo  = document.getElementById("vidas-enemigo")
+            SpanVidasEnemigo.innerHTML = vidasEnemigo
+
+    }else{
+            mensajeFinal = "PERDISTE"
+            vidasJugador--
+            SpanVidasJugador  = document.getElementById("vidas-jugador")
+            SpanVidasJugador.innerHTML = vidasJugador
+         
+    }
+    crearMensaje()
+}
+
+function crearMensaje(){
+
+    let parrafoMensajes = document.getElementById("mensajes");
+    let parrafo = document.createElement("p");
+    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", tu enemigo atacó con " + ataqueMaquina + ", " + mensajeFinal;
+    parrafoMensajes.appendChild(parrafo)
+
+}
 
 window.addEventListener('load', iniciarJuego)
 /*
@@ -108,4 +155,3 @@ Necesitamos los elementos cargados antes de poder utilizarlos,
 por ello se declara la función que escucha el evento de cuando toda 
 la estructura html se ha terminado de cargar. 
 */
-
