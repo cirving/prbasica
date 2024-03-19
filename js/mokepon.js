@@ -137,8 +137,22 @@ function evaluarBatalla(){
             SpanVidasJugador.innerHTML = vidasJugador
          
     }
+    
     crearMensaje()
+
+    revisarVidas()
+
+
 }
+function revisarVidas(){
+        if(vidasJugador == 0 ){
+            alert("YA PERDISTE.")
+ 
+        }else if(vidasEnemigo == 0){
+            alert("YA GANASTE.")
+
+        }
+    }
 
 function crearMensaje(){
 
