@@ -5,6 +5,17 @@ let vidasJugador = 3
 let vidasEnemigo = 3
 
 function iniciarJuego(){
+    
+    //ocultar secciones
+    let seccionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+    seccionSeleccionarAtaque.style.display = 'none'
+
+    let seccionReiniciar = document.getElementById("reiniciar")
+    seccionReiniciar.style.display = 'none'
+    
+    //click de botones
+    let reiniciar = document.getElementById("boton-reiniciar")
+    reiniciar.addEventListener('click', reiniciarJuego)  
 
     let botonMascotaJugador = document.getElementById("boton-mascota")
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)  
@@ -18,6 +29,7 @@ function iniciarJuego(){
     let botonTierra = document.getElementById("boton-tierra")
     botonTierra.addEventListener('click', seleccionarAtaqueTierra)  
  
+    
 }
 
 function seleccionarAtaqueFuego(){
@@ -36,9 +48,16 @@ function seleccionarAtaqueTierra(){
 
 function seleccionarMascotaJugador(){
 
+     //ocultar|mostrar secciones
+     let seccionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+     let seccionSeleccionarMascota = document.getElementById("seleccionar-mascotas")
+     seccionSeleccionarAtaque.style.display = 'block'
+     seccionSeleccionarMascota.style.display = 'none'
+    //tomar el valor que está seleccionado
     let hypodoge = document.getElementById("hypodoge").checked
     let capipepo = document.getElementById("capipepo").checked
     let ratigueya = document.getElementById("ratigueya").checked
+
     let nombreMascotaJugador = document.getElementById("mascota-jugador")
     let mascotaJugador
     
@@ -56,8 +75,9 @@ function seleccionarMascotaJugador(){
     }
 
     seleccionarMascotaEnemigo()
-    return nombreMascotaJugador.innerHTML = mascotaJugador
 
+    return nombreMascotaJugador.innerHTML = mascotaJugador    
+    
 }
 
 function seleccionarNumeroAleatorio(){
@@ -146,6 +166,7 @@ function evaluarBatalla(){
 function revisarVidas(){
         if(vidasJugador == 0 ){
             crearMensajeFinal("Perdiste.")
+
  
         }else if(vidasEnemigo == 0){
             crearMensajeFinal("¡¡¡Felicitaciones, has ganado!!!")
@@ -168,6 +189,21 @@ function crearMensajeFinal(mensajeFinalBatalla){
     parrafo.innerHTML = mensajeFinalBatalla;
     parrafoMensajes.appendChild(parrafo)
 
+    deshabilitarBotones()
+
+    let seccionReiniciar = document.getElementById("reiniciar")
+    seccionReiniciar.style.display = 'block'
+
+}
+
+function deshabilitarBotones(){
+    document.getElementById("boton-fuego").disabled = true;
+    document.getElementById("boton-agua").disabled = true;
+    document.getElementById("boton-tierra").disabled = true;
+}
+
+function reiniciarJuego(){
+    location.reload()
 }
 
 window.addEventListener('load', iniciarJuego)
