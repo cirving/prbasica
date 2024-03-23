@@ -8,16 +8,23 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1>MOPKN</h1>
-
     <section id="seleccionar-mascotas">
-        <h2>Elige a tu mascota:</h2>
-        <label for="hypodoge">Hypodoge</label>      
-        <input type="radio"  name ="mascota" id="hypodoge"/>
-        <label for="capipepo">Capipepo</label>  
-        <input type="radio"  name ="mascota" id="capipepo"/>
-        <label for="ratigueya">Ratigueya</label>  
-        <input type="radio"  name ="mascota" id="ratigueya"/>
+        <h1 class="titulo">Mokepon</h1>
+        <h2 class="subtitulo">Elige a tu mascota:</h2>
+            <div class="tarjetas-mokepones">
+                <label class="tarjeta-de-mokepon" for="hypodoge">
+                    <p>Hypodoge</p><img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hypodoge">
+                </label>      
+                <input type="radio"  name="mascota" id="hypodoge"/>
+                <label class="tarjeta-de-mokepon" for="capipepo">
+                    <p>Capipepo</p><img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="Capipepo">
+                </label>  
+                <input type="radio"  name="mascota" id="capipepo"/>
+                <label class="tarjeta-de-mokepon" for="ratigueya">  <p>Ratigueya</p><img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="Ratigueya">
+                </label>  
+                <input type="radio"  name="mascota" id="ratigueya"/>
+            </div>
+   
         <!--<label for="hypodoge">Hypodoge</label>  
         <input type="radio"  name ="mascota" id="langostelvis"/>
         <label for="hypodoge">Hypodoge</label>  
@@ -32,27 +39,35 @@
         Pydos -> Tierra y Fuego-->
         <p>
             <button id="boton-mascota">Seleccionar</button>
-
         <p>
     </section>
 
     <section id="seleccionar-ataque">
-        <h2>Elige un ataque:</h2>
-        <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-        <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
-        <p>
-            <button id="boton-fuego">Fire</button>
+
+        <h1 class="titulo">Mokepon</h1>
+        
+        <h2 class="subtitulo">Elige un ataque:</h2>
+        
+        <div id="botones-ataque">
+            <button  id="boton-fuego">Fire</button>
             <button id="boton-agua">Water</button>
             <button id="boton-tierra">Soil</button>
-        <p>       
-    </section>
+        </div>  
+        
+        <div>
+            <section id="mensajes">       
+            </section>
+            <section id="reiniciar">
+                <p>
+                    <button id="boton-reiniciar">Reiniciar</button>
+                </p>
+            </section>
+        </div>
 
-    <section id="mensajes">        
+        <div>      
+            <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p><div id="mensajes-jugador"></div>
+            <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p><div id="mensajes-enemigo"></div>
+        </div>
     </section>
-
-    <section id="reiniciar">
-        <p><button id="boton-reiniciar">Reiniciar</button></p>
-    </section>
-
 </body>
 </html>

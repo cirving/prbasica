@@ -12,6 +12,9 @@ function iniciarJuego(){
 
     let seccionReiniciar = document.getElementById("reiniciar")
     seccionReiniciar.style.display = 'none'
+
+    let seccionMensajes = document.getElementById("mensajes")
+    seccionMensajes.style.display = 'none'
     
     //click de botones
     let reiniciar = document.getElementById("boton-reiniciar")
@@ -50,9 +53,14 @@ function seleccionarMascotaJugador(){
 
      //ocultar|mostrar secciones
      let seccionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+     seccionSeleccionarAtaque.style.display = 'flex'
+
      let seccionSeleccionarMascota = document.getElementById("seleccionar-mascotas")
-     seccionSeleccionarAtaque.style.display = 'block'
      seccionSeleccionarMascota.style.display = 'none'
+
+     let seccionMensajes = document.getElementById("mensajes")
+     seccionMensajes.style.display = 'flex'
+
     //tomar el valor que está seleccionado
     let hypodoge = document.getElementById("hypodoge").checked
     let capipepo = document.getElementById("capipepo").checked
@@ -86,7 +94,7 @@ function seleccionarNumeroAleatorio(){
 
 function seleccionarMascotaEnemigo(){
 
-    let nombreMascotaEnemigo  = document.getElementById("mascota-enemigo")
+    let nombreMascotaEnemigo = document.getElementById("mascota-enemigo")
     let mascotaEnemigo
     let opcion = seleccionarNumeroAleatorio()
 
@@ -167,7 +175,6 @@ function revisarVidas(){
         if(vidasJugador == 0 ){
             crearMensajeFinal("Perdiste.")
 
- 
         }else if(vidasEnemigo == 0){
             crearMensajeFinal("¡¡¡Felicitaciones, has ganado!!!")
         }
@@ -175,7 +182,7 @@ function revisarVidas(){
 
 function crearMensaje(){
 
-    let parrafoMensajes = document.getElementById("mensajes");
+    let parrafoMensajes = document.getElementById("mensajes-jugador");
     let parrafo = document.createElement("p");
     parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", tu enemigo atacó con " + ataqueMaquina + ", " + mensajeFinal;
     parrafoMensajes.appendChild(parrafo)
@@ -184,7 +191,7 @@ function crearMensaje(){
 
 function crearMensajeFinal(mensajeFinalBatalla){
 
-    let parrafoMensajes = document.getElementById("mensajes");
+    let parrafoMensajes = document.getElementById("reiniciar");
     let parrafo = document.createElement("p");
     parrafo.innerHTML = mensajeFinalBatalla;
     parrafoMensajes.appendChild(parrafo)
