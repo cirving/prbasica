@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+
+<!-- seleccionar mascota -->
     <section id="seleccionar-mascotas">
         <h1 class="titulo">Mokepon</h1>
         <h2 class="subtitulo">Elige a tu mascota:</h2>
@@ -41,33 +43,36 @@
             <button id="boton-mascota">Seleccionar</button>
         <p>
     </section>
+<!-- ends seleccionar mascota -->
+
+<!-- seleccionar ataque -->
 
     <section id="seleccionar-ataque">
 
         <h1 class="titulo">Mokepon</h1>
-        
         <h2 class="subtitulo">Elige un ataque:</h2>
         
-        <div id="botones-ataque">
-            <button  id="boton-fuego">Fire</button>
-            <button id="boton-agua">Water</button>
-            <button id="boton-tierra">Soil</button>
+        <div id="recuadro-botones-ataque">
+            <button id="boton-fuego" class="boton-ataque">Fire</button>
+            <button id="boton-agua" class="boton-ataque">Water</button>
+            <button id="boton-tierra" class="boton-ataque">Soil</button>
         </div>  
         
-        <div>
-            <section id="mensajes">       
-            </section>
-            <section id="reiniciar">
-                <p>
+        <div id="mensajes">      
+                <p id="resultado">Mucho éxito</p> 
+                <section id="reiniciar">
                     <button id="boton-reiniciar">Reiniciar</button>
-                </p>
-            </section>
-        </div>
+                </section>
+         </div>
 
-        <div>      
+        <div>    
+            <div id="ataques-jugador"></div>
+            <div id="ataques-enemigo"></div>  
             <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p><div id="mensajes-jugador"></div>
             <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p><div id="mensajes-enemigo"></div>
         </div>
     </section>
+
+<!--ends seleccionar ataque -->
 </body>
 </html>
