@@ -182,19 +182,29 @@ function revisarVidas(){
 
 function crearMensaje(){
 
-    let parrafoMensajes = document.getElementById("mensajes-jugador");
-    let parrafo = document.createElement("p");
-    parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + ", tu enemigo atacó con " + ataqueMaquina + ", " + mensajeFinal;
-    parrafoMensajes.appendChild(parrafo)
+    let resultado = document.getElementById("resultado");
+    let ataquesJugador = document.getElementById("ataques-jugador");
+    let ataquesEnemigo = document.getElementById("ataques-enemigo");
+
+    let nuevoAtaqueDelJugador = document.createElement('p')
+    let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+    resultado.innerHTML = mensajeFinal;
+
+    nuevoAtaqueDelJugador.innerHTML = ataqueJugador;
+    nuevoAtaqueDelEnemigo.innerHTML = ataqueMaquina;
+
+    ataquesJugador.appendChild(nuevoAtaqueDelJugador);
+    ataquesEnemigo.appendChild(nuevoAtaqueDelEnemigo);
+    //parrafoMensajes.appendChild(resultado)
 
 }
 
 function crearMensajeFinal(mensajeFinalBatalla){
 
-    let parrafoMensajes = document.getElementById("reiniciar");
-    let parrafo = document.createElement("p");
-    parrafo.innerHTML = mensajeFinalBatalla;
-    parrafoMensajes.appendChild(parrafo)
+    let parrafoMensajes = document.getElementById("resultado");
+
+    parrafoMensajes.innerHTML = mensajeFinalBatalla;
 
     deshabilitarBotones()
 
