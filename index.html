@@ -14,17 +14,20 @@
         <h1 class="titulo">Mokepon</h1>
         <h2 class="subtitulo">Elige a tu mascota:</h2>
             <div class="tarjetas-mokepones">
+                <input type="radio"  name="mascota" id="hypodoge"/>
                 <label class="tarjeta-de-mokepon" for="hypodoge">
                     <p>Hypodoge</p><img src="./assets/mokepons_mokepon_hipodoge_attack.png" alt="Hypodoge">
                 </label>      
-                <input type="radio"  name="mascota" id="hypodoge"/>
+                
+                <input type="radio"  name="mascota" id="capipepo"/>
                 <label class="tarjeta-de-mokepon" for="capipepo">
                     <p>Capipepo</p><img src="./assets/mokepons_mokepon_capipepo_attack.png" alt="Capipepo">
                 </label>  
-                <input type="radio"  name="mascota" id="capipepo"/>
+              
+                <input type="radio"  name="mascota" id="ratigueya"/>
                 <label class="tarjeta-de-mokepon" for="ratigueya">  <p>Ratigueya</p><img src="./assets/mokepons_mokepon_ratigueya_attack.png" alt="Ratigueya">
                 </label>  
-                <input type="radio"  name="mascota" id="ratigueya"/>
+                
             </div>
    
         <!--<label for="hypodoge">Hypodoge</label>  
@@ -65,11 +68,17 @@
                 </section>
          </div>
 
-        <div>    
-            <div id="ataques-jugador"></div>
-            <div id="ataques-enemigo"></div>  
-            <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p><div id="mensajes-jugador"></div>
-            <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p><div id="mensajes-enemigo"></div>
+        <div class="ataques">
+            <div class="ataques-jugador">   
+                <p id="vidas-jugador">3</p> 
+                <p id="mascota-jugador"></p>
+                <div id="ataques-jugador"></div>
+            </div>
+            <div class="ataques-enemigo">
+                <p id="vidas-enemigo">3</p>
+                <p id="mascota-enemigo"></p>
+                <div id="ataques-enemigo"></div> 
+            </div>    
         </div>
     </section>
 

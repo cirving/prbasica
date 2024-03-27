@@ -70,13 +70,13 @@ function seleccionarMascotaJugador(){
     let mascotaJugador
     
     if(hypodoge == true){
-        alert("¡Has seleccionado a Hypodoge!")
+        //alert("¡Has seleccionado a Hypodoge!")
         mascotaJugador = "Hypodoge"
     }else if(capipepo == true){
-        alert("¡Has seleccionado a Capipepo!")
+       // alert("¡Has seleccionado a Capipepo!")
         mascotaJugador = "Capipepo"
     }else if(ratigueya == true){
-        alert("¡Has seleccionado a la Ratigueya!")
+       // alert("¡Has seleccionado a la Ratigueya!")
         mascotaJugador = "Ratigueya"
     }else{
         alert("Selecciona una mascota")
